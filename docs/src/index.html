@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>煮角測驗</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+
+<body>
+   <!###########導覽列########### -->
+ <!-- checkbox控制按鈕 + nav bar -->
+    <input type="checkbox" id="menu-control" />
+    <div class="header">
+      <h1 class="logo">
+        <img src="https://i.imgur.com/uwlq9hJ.png" alt="logo" />
+      </h1>
+      <nav>
+        <a class="g" href="#">食驗事</a>
+        <a class="o" href="#">農情味</a>
+        <a class="g" href="#">呷·嘉常菜</a>
+        <a class="o" href="#">義遊味盡</a>
+      </nav>
+      <!--     漢堡選單 -->
+      <label for="menu-control" class="menu-btn">
+        <span>遠端操控選單</span>
+      </label>
+    </div>
+
+  <main>
+    <!-- 問題一 -->
+    <section class="question active" id="question1">
+<!--       <h4 style="font-weight:600;color:#BC3E1E;">測驗</h4> -->
+      <br>
+      <h1 style="font-weight:800;margin-top:10px;"> Q 1.</h1>
+      <p>今天是個平凡悠閒的假日，原本和朋友相約公園野餐，不幸的是下了一點毛毛雨，這時你會?</p>
+      <div class="buttons">
+        <button class="btn" onclick="nextQuestion('question2a', 1, 'a')">不管，就算是冒著雨也無法抵擋我想出門的心!</button><br>
+        <button class="btn" onclick="nextQuestion('question2b', 1, 'b')">決定變更計畫，去朋友家度過美好時光</button><br>
+      </div>
+    </section>
+
+    <!-- 問題二 (選項A) -->
+    <section class="question" id="question2a">
+<!--       <h4 style="font-weight:600;color:#BC3E1E;">角測驗</h4><br> -->
+      <h1> Q 2.</h1>
+      <p>這時，你開始準備能夠帶出門野餐的食物，你會選擇:</p>
+      <div class="buttons">
+        <button class="btn" onclick="nextQuestion('question3a', 2, 'a')">唉唷! 好像沒有可以帶的，出去沿路再買</button><br>
+        <button class="btn" onclick="nextQuestion('question3b', 2, 'b')">還有一些時間，準備個簡單的三明治和飯糰</button>
+      </div>
+    </section>
+
+    <!-- 問題二 (選項B) -->
+    <section class="question" id="question2b">
+<!--       <h4 style="font-weight:600;color:#BC3E1E;">角測驗</h4><br> -->
+      <h1> Q 2.</h1>
+      <br>
+      <p>到朋友家，剛好是吃午餐的時間了，朋友詢問你要叫外送還是想一起煮一頓好吃的，你會選擇?</p>
+      <div class="buttons">
+        <button class="btn" onclick="nextQuestion('question3c', 2, 'a')">叫外送</button><br>
+         <button class="btn" onclick="nextQuestion('question3d', 2, 'b')">和朋友一起下廚</button>
+      </div>
+    </section>
+
+    <!-- 問題三 (選項A) -->
+    <section class="question" id="question3a">
+<!--       <h4 style="font-weight:600;color:#BC3E1E;">測驗</h4> -->
+      <br>
+      <h1> Q 3.</h1>
+      <br>
+      <p>當你騎車出發在路上，看到有幾家賣吃的店家，你想買哪個組合呢?</p>
+      <div class="buttons">
+        <button class="btn" onclick="nextQuestion('question4b', 3, 'a')">披薩+奶酪</button><br>
+        <button class="btn" onclick="nextQuestion('question4a', 3, 'b')">日式冷麵+水果</button><br>
+        <button class="btn" onclick="nextQuestion('question4b', 3, 'c')">海鮮壽司+烏龍茶</button>
+      </div>
+      <br>
+    </section>
+    
+     <!-- 問題三 (選項B) -->
+    <section class="question" id="question3b">
+<!--       <h4 style="font-weight:600;color:#BC3E1E;">測驗</h4> -->
+      <br>
+      <h1> Q 3.</h1>
+      <br>
+      <p>假設你有下列食材，你想做什麼口味的三明治及飯糰~</p>
+      <div class="buttons">
+        <button class="btn" onclick="nextQuestion('question4c', 3, 'a')">炸豬排三明治+泡菜飯糰</button><br>
+        <button class="btn" onclick="nextQuestion('question4c', 3, 'b')">薯泥三明治+梅子飯糰</button>
+      </div>
+    </section>
+    
+     <!-- 問題三 (選項C) -->
+    <section class="question" id="question3c">
+<!--       <h4 style="font-weight:600;color:#BC3E1E;">測驗 </h4> -->
+      <br>
+      <h1> Q 3.</h1>
+      <br>
+      <p>你們點進外送APP，會選擇:</p>
+      <div class="buttons">
+        <button class="btn" onclick="nextQuestion('question4d', 3, 'a')">可以一起分食的韓式炸雞分享盒</button><br>
+        <button class="btn" onclick="nextQuestion('question4d', 3, 'b')">一人一碗吃到飽的日式拉麵</button>
+      </div>
+    </section>
+    
+    <!-- 問題三 (選項D) -->
+    <section class="question" id="question3d">
+<!--       <h4 style="font-weight:600;color:#BC3E1E;">測驗</h4> -->
+      <br>
+      <h1> Q 3.</h1>
+      <br>
+      <p>和朋友下廚，假設材料都很齊全，你會選擇:</p>
+      <div class="buttons">
+        <button class="btn" onclick="nextQuestion('question4e', 3, 'a')">做自己最拿手的菜</button><br>
+        <button class="btn" onclick="nextQuestion('question4e', 3, 'b')">來點刺激的!轉轉盤來決定要挑戰做什麼料理</button>
+      </div>
+    </section>
+    
+    <!-- 問題四 (選項A) -->
+    <section class="question" id="question4a">
+<!--       <h4 style="font-weight:600;color:#BC3E1E;">測驗</h4> -->
+      <br>
+      <h1> Q 4.</h1>
+      <br>
+      <p>終於與朋友在公園見面了! 這時天空烏雲也逐漸散去，和朋友鋪好野餐墊之後，你發現朋友拿出的野餐料理竟是親手製作的飯糰，此時你的想法是?</p>
+      <div class="buttons">
+        <button class="btn" onclick="nextQuestion('question5a', 4, 'a')">沒有比較沒有傷害，我好像對吃太隨便了...</button><br>
+        <button class="btn" onclick="nextQuestion('question5a', 4, 'b')">哇...但感覺我買的好像更好吃耶...</button><br>
+      </div>
+    </section>
+    
+    <!-- 問題四 (選項B) -->
+    <section class="question" id="question4b">
+<!--       <h4 style="font-weight:600;color:#BC3E1E;">測驗</h4> -->
+      <br>
+      <h1> Q 4.</h1>
+      <br>
+      <p>終於與朋友在公園見面了! 這時天空烏雲也逐漸散去，和朋友鋪好野餐墊之後，你發現朋友拿出的野餐料理竟是親手製作的飯糰，此時你的想法是?</p>
+      <div class="buttons">
+        <button class="btn" onclick="nextQuestion('question5b', 4, 'a')">沒有比較沒有傷害，我好像對吃太隨便了...</button><br>
+        <button class="btn" onclick="nextQuestion('question5b', 4, 'b')">哇...但感覺我買的好像更好吃耶...</button>
+      </div>
+    </section>
+    
+    <!-- 問題四 (選項C) -->
+    <section class="question" id="question4c">
+<!--       <h4 style="font-weight:600;color:#BC3E1E;">測驗</h4> -->
+      <br>
+      <h1> Q 4.</h1>
+      <br>
+      <p>帶著自己精心製作的野餐料理和朋友在公園見面了!<br>尷尬的是，你發現朋友拎著超商袋子裡面，居然也是三明治和三角飯糰，你會怎麼做?</p>
+      <div class="buttons">
+        <button class="btn" onclick="nextQuestion('question5c', 4, 'a')">以幽默的方式和朋友說自己做多用心，<br>希望可以和他先共同品嘗自己做的三明治和飯糰</button><br>
+        <button class="btn" onclick="nextQuestion('question5c', 4, 'b')">不先吃朋友帶的食物不給面子，我還是先吃朋友從超商買的三明治好了</button>
+      </div>
+    </section>
+    
+    <!-- 問題四 (選項D) -->
+    <section class="question" id="question4d">
+<!--       <h4 style="font-weight:600;color:#BC3E1E;">測驗</h4> -->
+      <br>
+      <h1> Q 4.</h1>
+      <br>
+      <p>你們很快就吃飽了，飯後朋友想要削個蘋果當飯後點心，<br>不幸卻削到手了，這時你會如何接手這顆蘋果?</p>
+      <div class="buttons">
+        <button class="btn" onclick="nextQuestion('question5d', 4, 'a')">把它削好、切好</button><br>
+        <button class="btn" onclick="nextQuestion('question5e', 4, 'b')">我也不太會削耶...切成兩半各自啃好了</button>
+      </div>
+    </section>
+    
+    <!-- 問題四 (選項E) -->
+    <section class="question" id="question4e">
+<!--       <h4 style="font-weight:600;color:#BC3E1E;">測驗</h4> -->
+      <br>
+      <h1> Q 4.</h1>
+      <br>
+      <p>下廚時，你會選擇擔任哪種角色?</p>
+      <div class="buttons">
+        <button class="btn" onclick="nextQuestion('question5f', 4, 'a')">展現刀工技術的備料師傅</button><br>
+        <button class="btn" onclick="nextQuestion('question5f', 4, 'b')">守護大眾味蕾的試吃員</button><br>
+        <button class="btn" onclick="nextQuestion('question5f', 4, 'c')">掌控生死味道的終極主廚</button>
+      </div>
+    </section>
+    
+    <!-- 問題五 (選項a) -->
+    <section class="question" id="question5a">
+<!--       <h4 style="font-weight:600;color:#BC3E1E;">測驗</h4> -->
+      <br>
+      <h1> Q 5.</h1>
+      <br>
+      <p>野餐心滿意足地結束了，但你對朋友做的餐點驚艷不已，並且意猶未盡，心中默默想著:</p>
+      <div class="buttons">
+        <button class="btn" onclick="finishQuiz(5, 'a')">下次我也是著大展身手一番好了!</button><br>
+        <button class="btn" onclick="finishQuiz(5, 'b')">之後要經常找這位朋友蹭飯...</button>
+      </div>
+    </section>
+    
+    <!-- 問題五 (選項b) -->
+    <section class="question" id="question5b">
+<!--       <h4 style="font-weight:600;color:#BC3E1E;">測驗</h4> -->
+      <br>
+      <h1> Q 5.</h1>
+      <br>
+      <p>野餐心滿意足地結束了，但是回到家後，
+突然感覺肚子一陣不對勁，你認為是...?</p>
+      <div class="buttons">
+        <button class="btn" onclick="finishQuiz(5, 'a')">該不會是吃了朋友那技術不佳的料理導致的吧...</button><br>
+        <button class="btn" onclick="finishQuiz(5, 'b')">該不會是我帶去的食物有問題吧!?</button>
+      </div>
+    </section>
+    
+    <!-- 問題五 (選項c) -->
+    <section class="question" id="question5c">
+<!--       <h4 style="font-weight:600;color:#BC3E1E;">測驗</h4> -->
+      <br>
+      <h1> Q 5.</h1>
+      <br>
+      <p>儘管帶了相似的食物，野餐時光還是在愉快的對話中結束了，<br>為了避免下次野餐時再度發生「撞食」事件，你們決定:</p>
+      <div class="buttons">
+        <button class="btn" onclick="finishQuiz(5, 'a')">下次先共同規劃好想吃的食物，各自準備不同部分</button><br>
+        <button class="btn" onclick="finishQuiz(5, 'b')">下次可以試試一起動手做野餐便當，再帶去公園一同享用</button>
+      </div>
+    </section>
+    
+    <!-- 問題五 (選項d) -->
+    <section class="question" id="question5d">
+<!--       <h4 style="font-weight:600;color:#BC3E1E;">測驗</h4> -->
+      <br>
+      <h1> Q 5.</h1>
+      <br>
+      <p>切蘋果切到一半時，你發現朋友家的角落居然有快煮鍋，<br>一問之下才知道朋友其實有個煮菜夢，只是手太殘而無法實現，這時你會:</p>
+      <div class="buttons">
+        <button class="btn" onclick="finishQuiz(5, 'a')">提出教朋友做菜的想法</button><br>
+        <button class="btn" onclick="finishQuiz(5, 'b')">勸他還是放棄吧!遠離危險</button>
+      </div>
+    </section>
+    
+    <!-- 問題五 (選項e) -->
+    <section class="question" id="question5e">
+<!--       <h4 style="font-weight:600;color:#BC3E1E;">測驗</h4> -->
+      <br>
+      <h1> Q 5.</h1>
+      <br>
+      <p>切蘋果切到一半時，你發現朋友家的角落居然有快煮鍋，<br>一問之下才知道朋友其實有個煮菜夢，
+只是手太殘而無法實現，這時你會:</p>
+      <div class="buttons">
+        <button class="btn" onclick="finishQuiz(5, 'a')">雖然自己也不太會，不妨一起學學看</button><br>
+        <button class="btn" onclick="finishQuiz(5, 'b')">勸他還是放棄吧!遠離危險</button>
+      </div>
+    </section>
+    
+    <!-- 問題五 (選項f) -->
+    <section class="question" id="question5f">
+<!--       <h4 style="font-weight:600;color:#BC3E1E;">測驗</h4> -->
+      <br>
+      <h1> Q 5.</h1>
+      <br>
+      <p>最終，你們因為完美的分工合作，製作出一頓還能吃的料理，<br>也享受美好的午後時光，離開朋友家前，你想對他說:</p>
+      <div class="buttons">
+        <button class="btn" onclick="finishQuiz(5, 'a')">今天很好玩，下次我們在一起做別道料理吧</button><br>
+        <button class="btn" onclick="finishQuiz(5, 'b')">今天雖然很好玩，但也很累，我們下次還是叫外送吧</button>
+      </div>
+    </section>
+    
+    <!-- 測驗結果 -->
+    <section id="result" style="display: none;">
+    <div class="result-container">
+        <div class="result-header">
+            <h1 id="result-title">等級 S</h1>
+        </div>
+        <div class="result-content">
+            <div class="result-character" id="resultCharacterContainer">
+                <img src="https://i.imgur.com/qm2oN8j.png" alt="模擬畫面" />
+            </div>
+            <div class="result-info">
+                <div class="result-tags">
+                    <span>#料理天才</span>
+                    <span>#料理天才</span>
+                    <span>#料理天才</span>
+                </div>
+                <div class="result-description">
+                  <h3 id="result-it" style="font-weight:800;">做菜雷咖</h3><p></p>
+                    <p id="result-description">敘述文字</p>
+                </div>
+                <div class="result-extras">
+                  <div>
+                    最佳共煮拍檔
+                    <div style="display: flex; gap: 10px;">
+                    <img src="https://example.com/partner.png" alt="最佳共煮拍檔" />
+                    </div>
+                  </div>
+                  <div>
+                    炸廚房同夥
+                    <div style="display: flex; gap: 10px;">
+                    <img src="https://example.com/kitchen.png" alt="炸廚房同夥" />
+                    </div>
+                  </div>
+                </div>
+
+                <button class="cookbutton" id="cookbutton">煮菜去!</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+  </main>
+</body>
+</html>
