@@ -1,0 +1,662 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Noto Sans JP", serif;
+  /* font: normal 100% Helvetica; */
+  font-weight:bold;
+  letter-spacing:4px;
+}
+
+/* 滾動條樣式################################## */
+/* 整個滾動條 */
+::-webkit-scrollbar {
+  width: 4px; /* 滾動條的寬度 */
+  height: 4px; /* 滾動條的高度 */
+}
+
+/* 滾動條的背景 */
+::-webkit-scrollbar-track {
+  background: rgba(69, 54, 46, 1);
+  /* border-radius: 50px;  */
+  /* 圆角 */
+}
+
+/* 滾動條的滑塊 */
+::-webkit-scrollbar-thumb {
+  background: #BC3E1E; /* 滑塊顏色 */
+  border-radius: 50px; /* 圆角 */
+}
+
+/* 滑塊在懸停時的顏色 */
+::-webkit-scrollbar-thumb:hover {
+  background: #b9cdcd; /* 懸停時的顏色 */
+}
+
+/* 滾動條的邊距 */
+::-webkit-scrollbar-corner {
+  background: #f1f1f1; /* 角落的顏色 */
+}
+
+/* navbar --------------------------- */
+.header {
+  padding: 0px;
+  background-color: #f0efe6;
+  width: 100%;
+  height: 60px;
+  /*   display:flex; */
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 50;
+}
+.logo {
+  /* border: #79b95a 2px solid; */
+  padding:8px 4px;
+}
+.logo img {
+  height: 50px;
+}
+nav a {
+  display: block;
+  text-decoration: none;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 14px;
+}
+nav .g:hover {
+  background-color: #79b95a;
+  color: #f0efe6;
+}
+nav .o:hover {
+  background-color: #BC3E1E;
+  color: #f0efe6;
+}
+/* ######################電腦版導覽列####################### */
+@media screen and (min-width: 768px) {
+  #menu-control, .menu-btn {
+    display: none;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  nav {
+    /*     margin:-10px 0; */
+    position: relative;
+    left: 0;
+    display: flex !important;
+    height: auto;
+    width: auto;
+    padding: 0 40px;
+  }
+  nav a {
+    padding: 0px 16px;
+    color: #3c4040;
+    line-height: 60px;
+  }
+  nav a:hover {
+    text-decoration: none;
+  }
+}
+/* ######################手機版導覽列####################### */
+@media screen and (max-width: 767.5px) {
+  #menu-control {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    /*   z-index:3; */
+  }
+  nav {
+    box-sizing: border-box;
+    width: 200px;
+    height: calc(100vh - 40px);
+    background-color: #f0efe6;
+    position: absolute;
+    top: 60px;
+    right: -100%;
+    padding: 40px 0px;
+    transition: 0.5s;
+    opacity: 95%;
+  }
+  nav a {
+    line-height: 3.2;
+    padding: 0px 40px;
+    color: #3c4040;
+    /*     border-bottom: #79B95A 2px solid; */
+  }
+  nav a:hover {
+    text-decoration: none;
+  }
+  .logo img {
+    height: 45px !important;
+  }
+  .menu-btn {
+    /*   background-color: #0f0; */
+    width: 30px;
+    height: 30px;
+    margin: 0px 15px;
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  /* 漢堡橫條 偽元素 */
+  .menu-btn::before {
+    content: "";
+    width: 28px;
+    height: 2px;
+    background-color: #3c4040;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    box-shadow: 5px 10px 0px #000;
+  }
+  .menu-btn span {
+    display: block;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+  }
+  /* 按鈕控制 */
+  #menu-control:checked~.header nav {
+    right: 0;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .navbar-menu {
+    float: none;
+    display: none;
+  }
+  .navbar-menu.active {
+    display: block;
+  }
+  .navbar-menu > li {
+    display: block;
+  }
+  .button-toggle {
+    display: inline-block;
+  }
+}
+
+/*----------------------------------*/
+
+section#question .active>h4{
+  position: relative;
+  margin-top:20px;
+  font-weight:800;
+}
+
+main {
+  display: grid;
+  place-items: center; /* 同時水平和垂直置中 */
+  height: 100vh; /* 視窗高度 */
+}
+.question {
+      display: none;
+      padding-top: 70px;
+/*   border: #000 2px solid; */
+  width:532px;
+    }
+    .question.active {
+      display: block;
+    }
+
+body{
+/*   overflow-x:hidden; */
+  height: 100vh;
+  background: conic-gradient(from 133.73deg at 50% 53.12%, #F0EFE6 0deg, #DBE1D9 76.2deg, #F0EFE6 189.6deg, #D6DED7 292.2deg, #F0EFE6 356.4deg, #F0EFE6 360deg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+section#bottom{
+  background: #79B95A;
+  height: 60px;
+  text-align: center;
+}
+section#bottom>.bottomblock{
+  padding-top: 20px;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 3px;
+  font-size: 16px;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.question h2 {
+    margin: 0;
+}
+
+.question h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color:#45362E;
+}
+
+.question p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    margin-top:40px;
+    line-height: 1.5;
+    color: #45362e;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-radius: 30px;
+    width: 100%;
+}
+
+.btn {
+    position: relative;
+    background-color: #3c871c;
+    padding: 24px 16px !important;
+    font-size: 14px;
+    font-weight:bold;
+    color: #fcf9f9 !important;
+    outline: none;
+    border: none;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 50px;
+}
+
+.btn:hover {
+    background-color: #76b159;
+/*     color: #000000 !important; */
+    border-radius: 5px;
+}
+
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #3c871c;
+    z-index: -1;
+    transform: translateY(-50%);
+    border-radius: 5px;
+}
+
+.result-container {
+  background-color: #B9CDCD;
+  padding: 40px;
+  border-radius: 10px;
+  width: 800px;
+  height: auto; /* Adjust height to fit content dynamically */
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+}
+
+.result-header h1 {
+  font-size: 2rem;
+  font-weight:700;
+  color: #BC3E1E;
+  margin-bottom: 20px;
+  position: relative;
+  top: 0px;
+  left: -300px;
+}
+
+.result-content {
+  display: flex;
+  justify-content: flex-start; /* Align content side by side */
+  align-items: flex-start; /* Align at the top */
+  gap: 20px;
+  flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+}
+
+.result-character {
+  flex-shrink: 0; /* Prevent shrinking */
+  max-width: 250px; /* Limit image width */
+}
+
+.result-character img {
+  width: 90%;
+  height: auto; /* Maintain aspect ratio */
+}
+
+.result-info {
+  flex-grow: 1; /* Allow the info section to take up remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+.result-tags {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-weight:600;
+}
+
+.result-tags span {
+  background-color: #76B159;
+  padding: 10px 25px;
+  border-radius: 30px;
+  color: white;
+  font-size: 14px;
+  font-weight:700;
+  position: relative;
+  top: 0px;
+  right: 30px;
+}
+
+.result-description {
+  background-color: #fef7e3;
+  padding: 10px;
+  width: 100%;
+  max-width: 400px; /* Limit width */
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.result-description h3 {
+  color: #BC3E1E;
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: left;
+  letter-spacing: 1px;
+}
+
+.result-description p {
+  color: #333;
+  font-size: 14px;
+  font-weight:700;
+  text-align: left;
+  margin-top: 10px;
+  letter-spacing: 1px;
+}
+
+.result-extras {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.result-extras div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fef7e3;
+  padding: 10px;
+  border-radius: 10px;
+  width: 190px;
+  height: auto;
+  color: #333;
+  gap: 10px;
+  font-size:14px;
+  font-weight:700;
+}
+
+.result-extras img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.cook-button {
+  background-color: #BC3E1E;
+  color: white;
+  border: none;
+  padding: 20px 20px; /* Reduce padding */
+  width: 150px; /* Set a fixed width */
+  border-radius: 50px;
+  font-size: 20px;
+  font-weight:800;
+  cursor: pointer;
+  position: relative;
+  top: 0px;
+  right: -250px;
+}
+
+
+
+
+/* 平板模式 (小於 768px) */
+@media (max-width: 768px) {
+  .result-container {
+    width: 90%;
+    padding: 30px;
+    height: 90%;
+  }
+
+  .result-header h1 {
+    font-size: 1.5rem;
+    left: 0;
+    top: 0;
+  }
+
+  .result-title{
+    position:relative;
+    font-size:16px;
+    font-weight:800;
+  }
+  
+.result-character img {
+  max-width: 60%;  /* 確保圖片不會超出容器 */
+  height: auto;     /* 保持圖片比例 */
+  object-fit: contain;  /* 保證圖片比例不會被拉伸 */
+  display: block;
+  position:relative;
+  left:150px;
+}
+
+
+
+  /* 保持平行排列且換行 */
+  .result-tags {
+    flex-wrap: wrap;
+    justify-content: center; /* 居中排列 */
+    gap: 10px;
+    right: 0;
+    top: 0;
+    margin-top:50px;
+  }
+
+  .result-tags span {
+    font-size: 0.8rem;
+    padding: 10px 10px;
+    flex-basis: calc(33.33% - 10px); /* 確保每個標籤占三分之一寬度 */
+    position: relative;
+    top: 0px;
+    right: -10px;
+  }
+
+.result-description {
+    width: 120%;  /* 設定為相對寬度，讓其適應手機螢幕 */
+    height: auto;  /* 高度設為 auto，讓內容自動適應 */
+    top: 0px;  /* 可以根據需要微調位置 */
+    right: 0;  /* 調整到居中對齊 */
+    margin-left: auto;  /* 居中 */
+    margin-right: auto;  /* 居中 */
+  }
+
+  .result-description h3 {
+    font-size: 20px;  /* 調整字體大小以適應手機屏幕 */
+  }
+
+  .result-description p {
+    font-size: 14px;  /* 增大文字大小以提高可讀性 */
+  }
+  
+
+.result-extras {
+  display: flex;
+  flex-direction: row; /* 水平排列 */
+  position: relative;
+  top: 0;
+  right: 0; /* 如果不需要右側偏移，可去除或調整 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  margin: 0 auto; /* 使元素在父容器內水平居中 */
+  width: 90%; /* 或者根據需要設定合適的寬度 */
+}
+
+
+.result-extras div {
+  display: flex; /* 開啟 Flexbox 佈局 */
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  right: 0;
+  top: 0;
+  justify-content: flex-start; /* 左對齊內部項目，若需要居中可改為 center */
+  align-items: center; /* 垂直居中對齊內部項目 */
+}
+
+
+  /* 縮小按鈕大小 */
+.cook-button {
+  right: -150px;
+  top: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  width: 150px; /* Explicit width for the button */
+  text-align: center; /* Ensure the text is centered */
+}
+
+}
+
+/* 手機模式 (小於 480px) */
+@media (max-width: 480px) {
+  
+  .question p{
+    font-size:13px;
+  }
+  /* 調整標題的字體大小 */
+  .result-header h1 {
+    font-size: 1.2rem;
+    margin: 10px 0; /* 增加上下間距以防文字溢出 */
+  }
+
+.result-character img {
+  max-width: 50%;  /* 確保圖片不會超出容器 */
+  height: auto;     /* 保持圖片比例 */
+  object-fit: contain;  /* 保證圖片比例不會被拉伸 */
+  display: block;
+  position:relative;
+  top:10px;
+  left:80px;
+}
+
+
+ /* 水平排列標籤 */
+.result-tags {
+  display: flex;  /* 設定為彈性容器 */
+  flex-direction: row;  /* 水平排列項目 */
+  align-items: center;  /* 垂直居中對齊 */
+  gap: 10px;  /* 設定項目之間的間距 */
+  width: 100%;  /* 設定為 100% 使其佔滿整個寬度，根據需要調整 */
+  margin-left: -10px;  /* 如果需要，可以調整左邊距 */
+}
+
+
+ .result-tags span {
+    font-size: 0.7rem;
+    padding: 8px;
+    width: 90%; /* 每個標籤占用 90% 的寬度，以適應小螢幕 */
+    text-align: center; /* 文字居中 */
+  }
+
+  /* 調整描述區塊的大小 */
+.result-description {
+    width: 90%;  /* 設定為相對寬度，讓其適應手機螢幕 */
+    height: auto;  /* 高度設為 auto，讓內容自動適應 */
+    top: 0px;  /* 可以根據需要微調位置 */
+    right: 0;  /* 調整到居中對齊 */
+    margin-left: auto;  /* 居中 */
+    margin-right: auto;  /* 居中 */
+  }
+
+  .result-description h3 {
+    font-size: 20px;  /* 調整字體大小以適應手機屏幕 */
+  }
+
+  .result-description p {
+    font-size: 14px;  /* 增大文字大小以提高可讀性 */
+  }
+  
+  .result-extras {
+  display: flex;
+  flex-direction: row; /* 水平排列 */
+  position: relative;
+  top: 0;
+  right: 0; /* 如果不需要右側偏移，可去除或調整 */
+  justify-content: center; /* 水平居中 */
+  align-items: center; /* 垂直居中 */
+  margin: 0 auto; /* 使元素在父容器內水平居中 */
+  width: 90%; /* 或者根據需要設定合適的寬度 */
+}
+
+
+.result-extras div {
+  display: flex; /* 開啟 Flexbox 佈局 */
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  right: 0;
+  top: 0;
+  justify-content: flex-start; /* 左對齊內部項目，若需要居中可改為 center */
+  align-items: center; /* 垂直居中對齊內部項目 */
+}
+
+  /* 縮小按鈕大小 */
+  .cook-button {
+  background-color: #ff8363;
+  color: white;
+  border: none;
+  padding: 10px 5px; /* Reduce padding */
+  width: 100px; /* Set a fixed width */
+  border-radius: 50px;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  top: 0px;
+  right: -90px;
+}
+}
+
+
+
+#bottom {
+  position: fixed;  /* Fixes the element at a specific position */
+  bottom: 0;        /* Aligns the element to the bottom of the page */
+  left: 0;          /* Aligns the element to the left of the page */
+  width: 100%;      /* Ensures the section takes the full width of the viewport */
+  background-color: #333; /* Optional: background color for visibility */
+  color: black;     /* Optional: text color */
+  text-align: center; /* Centers the text inside */
+  padding: 10px;     /* Optional: adds some padding for spacing */
+  z-index: 1000;     /* Ensures the footer stays on top if there are other elements */
+}
+
+.bottomblock {
+  font-size: 14px; /* Optional: adjust the font size */
+}
